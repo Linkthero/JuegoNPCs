@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
 
     public void ReiniciarNivel()
     {
-        SceneManager.LoadScene("");//NOMBRE DE LA ESCENA
+        SceneManager.LoadScene("Juego");
     }
 
     public void VolverAMenuPrincipal()

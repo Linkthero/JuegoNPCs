@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ColisionEnemigo : MonoBehaviour
 {
+    [SerializeField] private GameObject panelGameOver;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +19,13 @@ public class ColisionEnemigo : MonoBehaviour
     {
         if(other.CompareTag("Enemy") )
         {
-            //MUERE
+            panelGameOver.SetActive(true);
+            Invoke(nameof(menu),3);
         }
     }
+
+    private void menu()
+    {
+        Datos.instance.VolverAMenuPrincipal();
+    } 
 }

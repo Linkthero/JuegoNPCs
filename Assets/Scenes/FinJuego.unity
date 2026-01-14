@@ -233,8 +233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.15100001}
   m_AnchorMax: {x: 0.5, y: 0.15100001}
-  m_AnchoredPosition: {x: 0.000034332, y: 59}
-  m_SizeDelta: {x: 212.2529, y: 53.2235}
+  m_AnchoredPosition: {x: 33, y: 418}
+  m_SizeDelta: {x: 658.7068, y: 149.3495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218544815
 MonoBehaviour:
@@ -280,13 +280,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1234851171}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1234851172}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: VolverAMenuPrincipal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -414,8 +414,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -677,8 +677,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -763,8 +763,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 886.2552, y: 137.8948}
+  m_AnchoredPosition: {x: 0.000026703, y: 254}
+  m_SizeDelta: {x: 1393.8674, y: 272.4426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031851938
 MonoBehaviour:
@@ -813,8 +813,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 127.8
-  m_fontSizeBase: 127.8
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1116,8 +1116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.15100001}
   m_AnchorMax: {x: 0.5, y: 0.15100001}
-  m_AnchoredPosition: {x: -0.000026703, y: -26.612}
-  m_SizeDelta: {x: 212.2529, y: 53.2235}
+  m_AnchoredPosition: {x: 32.999725, y: 177.76575}
+  m_SizeDelta: {x: 658.7068, y: 149.3495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308535999
 MonoBehaviour:

@@ -103,7 +103,8 @@ public class Enemigo : MonoBehaviour
                     }
                 }
                 yield return new WaitForSeconds(0.5f);
-        }
+                Debug.Log(playerDetected);
+             }
         }
 
     #endregion
@@ -119,7 +120,7 @@ public class Enemigo : MonoBehaviour
                 StopCoroutine(Patroll());
                 runningPatroll = null;
             }
-            StartCoroutine(Follow());
+            StartCoroutine(DistanceDetection());
         }
     }
 
@@ -127,7 +128,7 @@ public class Enemigo : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            StopCoroutine(Follow());
+            StopCoroutine(DistanceDetection());
             playerDetected = false;
             if(runningPatroll == null)
                 runningPatroll = StartCoroutine(Patroll());

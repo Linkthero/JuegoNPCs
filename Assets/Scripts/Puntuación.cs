@@ -5,7 +5,7 @@ public class Puntuación : MonoBehaviour
 {
     private int puntos;
     [SerializeField] private TextMeshProUGUI txtPuntos;
-    private int MaxPuntos = 10;
+    private int MaxPuntos = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +19,14 @@ public class Puntuación : MonoBehaviour
         if(puntos == MaxPuntos)
         {
             Datos.instance.ReiniciarNivel();
+        }
+    }
+    private void Update()
+    {
+        if(puntos == MaxPuntos)
+        {
+            Datos.instance.finJuego = true;
+            Datos.instance.FinJuego();
         }
     }
 

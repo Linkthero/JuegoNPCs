@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Datos : MonoBehaviour
 {
      public static Datos instance;
-
+    public bool finJuego = false;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class Datos : MonoBehaviour
 
     public void ReiniciarNivel()
     {
-        SceneManager.LoadScene("");//NOMBRE DE LA ESCENA
+        SceneManager.LoadScene("Juego");
     }
 
     public void VolverAMenuPrincipal()

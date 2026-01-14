@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 4052bafe63c4eef489221dc973080238
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -33,8 +33,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: idle_updown
-      takeName: idle_up_down_idle_up_down
+      name: idle
+      takeName: idle_up_down
       internalID: 2891958252224344158
       firstFrame: 1
       lastFrame: 59
@@ -69,6 +69,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -96,6 +97,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -128,6 +130,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
@@ -135,8 +138,8 @@ ModelImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 271926
-  packageName: Little Ghost lowpoly(FREE)
+  productId: 350600
+  packageName: Dark Ghosts FREE
   packageVersion: 1.0
   assetPath: Assets/Little_GhostLP(FREE)/FBX/LittleGhost_LP.fbx
-  uploadId: 631236
+  uploadId: 835174
