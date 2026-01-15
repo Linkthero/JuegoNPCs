@@ -5,6 +5,7 @@ public class Datos : MonoBehaviour
 {
      public static Datos instance;
     public bool finJuego = false;
+    private int dificultad; // 0 - Facil, 1 - Medio, 2 - Dificil
 
     private void Awake()
     {
@@ -34,4 +35,14 @@ public class Datos : MonoBehaviour
     {
         SceneManager.LoadScene("FinJuego");
     }
+
+    public void SetDificultad(int d)
+    {
+        dificultad = d;
+    }
+
+    public int GetDificultad()
+    {
+        return dificultad;
+    }   
 }

@@ -12,7 +12,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private int childrenIndex;
     [SerializeField] private Transform path;
 
-    [SerializeField] private float playerDetectionDistance;
+    [SerializeField] private float playerDetectionDistance = 4f;
     [SerializeField] private bool playerDetected;
 
     private Coroutine runningPatroll;
@@ -21,6 +21,19 @@ public class Enemigo : MonoBehaviour
         //destination = RandomDestination();
         //GetComponent<NavMeshAgent>().SetDestination(destination);
         destination = path.GetChild(0).position;
+
+        //ajustamos la distancia de deteccion segun la dificultad
+        if (Datos.instance.GetDificultad() == 0)
+        {
+            playerDetectionDistance = 4f;
+        } else if (Datos.instance.GetDificultad() == 1)
+        {
+            playerDetectionDistance = 6f;
+        } else if (Datos.instance.GetDificultad() == 2)
+        {
+            playerDetectionDistance = 8f;
+        }
+
         GetComponent<NavMeshAgent>().SetDestination(path.GetChild(0).position);
         runningPatroll = StartCoroutine(Patroll());
         StartCoroutine(DistanceDetection());
