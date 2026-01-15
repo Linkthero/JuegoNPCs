@@ -41,7 +41,6 @@ public class Enemigo : MonoBehaviour
 
     public void Update()
     {
-        //if(playerDetected)
         //{
         //    StopCoroutine(Patroll());            
         //} else if(runningPatroll == null)
@@ -109,6 +108,7 @@ public class Enemigo : MonoBehaviour
                 }
 
                 playerDetected = true;
+                
                 destination = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
                 GetComponent<NavMeshAgent>().SetDestination(destination);
             }

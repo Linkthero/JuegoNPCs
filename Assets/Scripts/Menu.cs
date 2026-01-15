@@ -13,14 +13,19 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        menuOpciones.SetActive(false);
-        toggleFacil = Toggles.transform.GetChild(0).GetComponent<Toggle>();
-        toggleMedio = Toggles.transform.GetChild(1).GetComponent<Toggle>();
-        toggleDificil = Toggles.transform.GetChild(2).GetComponent<Toggle>();
+        if (menuOpciones != null)
+        {
+            menuOpciones.SetActive(false);
 
-        toggleFacil.isOn = true;
-        toggleMedio.isOn = false;
-        toggleDificil.isOn = false;
+            toggleFacil = Toggles.transform.GetChild(0).GetComponent<Toggle>();
+            toggleMedio = Toggles.transform.GetChild(1).GetComponent<Toggle>();
+            toggleDificil = Toggles.transform.GetChild(2).GetComponent<Toggle>();
+
+            toggleFacil.isOn = true;
+            toggleMedio.isOn = false;
+            toggleDificil.isOn = false;
+        }
+        AudioManager.instance.PlayMenu();
     }
 
     public void Salir() {

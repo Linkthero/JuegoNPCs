@@ -16,10 +16,11 @@ public class Datos : MonoBehaviour
         else
         {
             instance = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
 
     }
+
 
     public void ReiniciarNivel()
     {
@@ -44,5 +45,6 @@ public class Datos : MonoBehaviour
     public int GetDificultad()
     {
         return dificultad;
-    }   
+    }
+
 }

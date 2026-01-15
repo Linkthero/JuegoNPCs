@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>(); // Obtener el componente CharacterController
+        AudioManager.instance.PlayJuego();
     }
 
     private void OnMove(InputValue value)

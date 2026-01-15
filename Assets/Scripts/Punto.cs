@@ -13,6 +13,7 @@ public class Punto : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+            EfectosSonido.instance.audioSource.PlayOneShot(EfectosSonido.instance.audioClip);
             other.gameObject.GetComponent<Puntuación>().SumarPunto();
         }
     }
