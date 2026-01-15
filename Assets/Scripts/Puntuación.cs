@@ -5,12 +5,15 @@ public class Puntuación : MonoBehaviour
 {
     private int puntos;
     [SerializeField] private TextMeshProUGUI txtPuntos;
+    [SerializeField] private GameObject panelInfo;
     private int MaxPuntos = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         puntos = 0;
+        panelInfo.SetActive(true);
+        Invoke(nameof(CerrarPanelInfo), 5f);
     }
     public void SumarPunto()
     {
@@ -28,6 +31,11 @@ public class Puntuación : MonoBehaviour
             Datos.instance.finJuego = true;
             Datos.instance.FinJuego();
         }
+    }
+
+    private void CerrarPanelInfo()
+    {
+        panelInfo.SetActive(false);
     }
 
 }

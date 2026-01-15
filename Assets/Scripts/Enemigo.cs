@@ -43,12 +43,16 @@ public class Enemigo : MonoBehaviour
         //}
     }
 
+    private Vector3 RandomDestination()
+    {
+        return new Vector3(Random.Range(min.x, max.x), 0, Random.Range(min.z, max.z));
+    }
 
     #region Always Detect
 
     IEnumerator Follow()
     {
-        while(true)
+        while (true)
         {
             destination = player.transform.position;
             GetComponent<NavMeshAgent>().SetDestination(destination);
@@ -62,9 +66,9 @@ public class Enemigo : MonoBehaviour
 
     IEnumerator Patroll()
     {
-        while(true)
+        while (true)
         {
-            if(Vector3.Distance(transform.position, destination) < 1f)
+            if (Vector3.Distance(transform.position, destination) < 1f)
             {
                 childrenIndex++;
                 childrenIndex = childrenIndex % path.childCount;
@@ -79,33 +83,33 @@ public class Enemigo : MonoBehaviour
     #endregion
 
     #region Distance detenction
-        IEnumerator DistanceDetection()
+    IEnumerator DistanceDetection()
+    {
+        while (true)
         {
-            while(true) 
+            if (Vector3.Distance(transform.position, player.transform.position) < playerDetectionDistance)
             {
-                if(Vector3.Distance(transform.position, player.transform.position) < playerDetectionDistance)
+                if (runningPatroll != null)
                 {
-                    if(runningPatroll != null)
-                    {
-                        StopCoroutine(Patroll());
-                        runningPatroll = null;
-                    }
-                    
-                    playerDetected = true;
-                    destination = player.transform.position;
-                    GetComponent<NavMeshAgent>().SetDestination(destination);
-                } else
-                {
-                    playerDetected = false;
-                    if(runningPatroll == null)
-                    {
-                        runningPatroll = StartCoroutine(Patroll());
-                    }
+                    StopCoroutine(Patroll());
+                    runningPatroll = null;
                 }
-                yield return new WaitForSeconds(0.5f);
-                Debug.Log(playerDetected);
-             }
+
+                playerDetected = true;
+                destination = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+                GetComponent<NavMeshAgent>().SetDestination(destination);
+            }
+            else
+            {
+                playerDetected = false;
+                if (runningPatroll == null)
+                {
+                    runningPatroll = StartCoroutine(Patroll());
+                }
+            }
+            yield return new WaitForSeconds(1f);
         }
+    }
 
     #endregion
 
@@ -115,7 +119,7 @@ public class Enemigo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if(runningPatroll != null)
+            if (runningPatroll != null)
             {
                 StopCoroutine(Patroll());
                 runningPatroll = null;
@@ -126,15 +130,16 @@ public class Enemigo : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             StopCoroutine(DistanceDetection());
             playerDetected = false;
-            if(runningPatroll == null)
+            if (runningPatroll == null)
                 runningPatroll = StartCoroutine(Patroll());
         }
     }
     #endregion
+
 
 
 }
